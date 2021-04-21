@@ -2,31 +2,31 @@
 #include <string>
 #include "Cartoon.h"
 
-using namespace std;
-
-void InCartoon(Cartoon &c, std::ifstream& ifst)
-{
-	int Line;
-	ifst >> Line;
-
-	//Функция завершается при получении данных неверного формата
-	if (ifst.fail())	
+namespace myLab {
+	void InCartoon(Cartoon& c, ifstream& ifst)
 	{
-		return;
-	}
-	else
-	{
-		if (Line == 0)
+		short line;
+		ifst >> line;
+
+		//Функция завершается при получении данных неверного формата
+		if (ifst.fail())
 		{
-			c.mType = Cartoon::DRAWN;
+			return;
 		}
-		else if (Line == 1)
+		else
 		{
-			c.mType = Cartoon::RAGDOLL;
-		}
-		else if (Line == 2)
-		{
-			c.mType = Cartoon::PLASTICINE;
+			if (line == 0)
+			{
+				c.mType = Cartoon::DRAWN;
+			}
+			else if (line == 1)
+			{
+				c.mType = Cartoon::RAGDOLL;
+			}
+			else if (line == 2)
+			{
+				c.mType = Cartoon::PLASTICINE;
+			}
 		}
 	}
 }

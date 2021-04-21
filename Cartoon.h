@@ -1,15 +1,22 @@
 #pragma once
+#include <fstream>
 #include "Type.h"
 
 using namespace std;
 
-struct Cartoon
-{
-	enum creationType
+namespace myLab {
+	struct Cartoon
 	{
-		DRAWN,
-		RAGDOLL,
-		PLASTICINE
+		enum creationType
+		{
+			DRAWN,
+			RAGDOLL,
+			PLASTICINE
+		};
+		creationType mType;
 	};
-	creationType mType;
-};
+
+	void InCartoon(Cartoon& c, ifstream& ifst);
+	void Out(Cartoon& c, ofstream& ofst);
+
+}

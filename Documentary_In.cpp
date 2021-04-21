@@ -1,21 +1,20 @@
 #include <fstream>
-#include <string>
 #include "Documentary.h"
 
-using namespace std;
-
-void InDocumentary(Documentary& d, std::ifstream& ifst)
-{
-	int Line;
-	ifst >> Line;
-
-	//Функция завершается при получении данных неверного формата
-	if (ifst.fail())	
+namespace myLab {
+	void InDocumentary(Documentary& d, ifstream& ifst)
 	{
-		return;
-	}
-	else
-	{
-		d.mYear = Line;
+		unsigned short int line;
+		ifst >> line;
+
+		//Функция завершается при получении данных неверного формата
+		if (ifst.fail())
+		{
+			return;
+		}
+		else
+		{
+			d.mYear = line;
+		}
 	}
 }

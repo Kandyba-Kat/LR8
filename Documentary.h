@@ -1,9 +1,15 @@
 #pragma once
+#include <fstream>
 #include "Type.h"
 
 using namespace std;
 
-struct Documentary
-{
-	int mYear; // Год создания
-};
+namespace myLab {
+	struct Documentary
+	{
+		unsigned short int mYear; // Год создания
+	};
+
+	void InDocumentary(Documentary& d, ifstream& ifst);
+	void Out(Documentary& d, ofstream& ofst);
+}
